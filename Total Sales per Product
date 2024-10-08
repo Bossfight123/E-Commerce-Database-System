@@ -1,0 +1,4 @@
+SELECT p.ProductName, SUM(oi.Quantity) AS TotalSold, SUM(oi.Quantity * oi.Price) AS TotalRevenue
+FROM OrderItems oi
+JOIN Products p ON oi.ProductID = p.ProductID
+GROUP BY p.ProductName;
